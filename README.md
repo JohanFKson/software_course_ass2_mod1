@@ -1,10 +1,13 @@
 # software_course_ass2_mod1
+This is an assignment for the course Software Engineering and cloud computing. In this code we implement a very basic software using the 
+a test driven development with the tools git, Ant, Junit and Travis.
 
+## Requirements
 
-# checklist
+* JDK
+* Junit
+* Apache Ant
 
-make sure that java commands are working:
- - java
- - javac
+## Running the system
 
-Install Ant:
+Since everything is built using Ant build system it will all run using the command `ant`.
