@@ -1,8 +1,25 @@
 import java.util.regex.*;
+import java.util.regex.*;
 public class PigLatin {
 
-	public static String translateWord(String word) {
-		return word+"test";
+	public static String translateWord(String english_word) {
+		Pattern pattern = Pattern.compile("^([^aeiouAEIOU]*)([aeiouAEIOU]*\\w*)$");
+		Matcher matcher = pattern.matcher(english_word);
+
+		matcher.find();
+		String piglatin_word;
+
+		if(matcher.group(1).length() > 0) {
+			piglatin_word = matcher.group(2) + matcher.group(1) + "ay";
+		} else {
+			piglatin_word = matcher.group(0) + "way";
+		}
+
+		if(english_word.substring(0, 1).equals(english_word.substring(0, 1).toUpperCase())) {
+			piglatin_word = piglatin_word.substring(0, 1).toUpperCase() + piglatin_word.substring(1).toLowerCase();
+		}
+
+		return piglatin_word;
 	}
 
 	public static String translateSentence(String sentence) {
