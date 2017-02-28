@@ -21,6 +21,8 @@ public class PigLatinTest {
 				t.translateWord("elit") + ".";
 		assertEquals(translation, truth);
 	}
+
+	@Test
 	public void testTranslateWord() {
 		PigLatin t = new PigLatin();
 
@@ -28,9 +30,9 @@ public class PigLatinTest {
 		String[] piglatin_words = new String[]{"igpay", "Atinlay", "eerschay", "ilesmay", "eatway", "omeletway"};
 
 		for(int i = 0; i < english_words.length; ++i) {
-			String piglatin_word = t.translateWord(piglatin_words[i]);
-			assertEquals(english_words[i], piglatin_word);
-			}
+			String piglatin_word = t.translateWord(english_words[i]);
+			assertEquals(piglatin_words[i], piglatin_word);
+		}	
 
 	}
 }
