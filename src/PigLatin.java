@@ -4,8 +4,6 @@ import java.util.Random;
 import java.io.*;
 public class PigLatin {
 
-
-
 	public static String executeChoice(String choice){
 		String printVariable;
 
@@ -21,7 +19,22 @@ public class PigLatin {
 		return printVariable;
 	}
 
+	private static Boolean verifyWord(String word) {
+		Pattern pattern = Pattern.compile("^[a-zA-Z]*$");
+		Matcher matcher = pattern.matcher(word);
+		return matcher.matches();
+	}
+
+	private static Boolean verifySentence(String sentence) {
+		Pattern pattern = Pattern.compile("^[a-zA-Z,. ]*$");
+		Matcher matcher = pattern.matcher(sentence);
+		return matcher.matches();
+	}
+
 	public static String translateWord(String english_word) {
+		if(!verifyWord(english_word))
+			throw new java.util.InputMismatchException("The words can only include a-z. Failure on: `"+english_word+"`");
+
 		Pattern pattern = Pattern.compile("^([^aeiouAEIOU]*)([aeiouAEIOU]*\\w*)$");
 		Matcher matcher = pattern.matcher(english_word);
 
@@ -42,7 +55,9 @@ public class PigLatin {
 	}
 
 	public static String translateSentence(String sentence) {
-		PigLatin translator = new PigLatin();
+		if(!verifySentence(sentence))
+			throw new java.util.InputMismatchException("The software only handles inputs with a-z and sword separators ` `, `,` and `.`.\nFailure on: `"+sentence+"`");
+
 		String translation = "";
 
 		String regex = "([a-zA-Z]*)([^a-zA-Z]*)";
@@ -50,13 +65,12 @@ public class PigLatin {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(sentence);
 
-
         String word, separator;
         while(matcher.find()) {
         	word = matcher.group(1);
         	separator = matcher.group(2);
         	if (word.length() > 0)
-        		translation += translator.translateWord(word);
+        		translation += PigLatin.translateWord(word);
         	translation += separator;
         }
 
@@ -121,4 +135,4 @@ public class PigLatin {
 
 		System.out.println(result);
 	}
-}	
+}
