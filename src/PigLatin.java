@@ -35,7 +35,8 @@ public class PigLatin {
 			throw new java.util.InputMismatchException("The words can only include a-z. Failure on: `"+english_word+"`");
 
 		Pattern pattern = Pattern.compile("^([^aeiouAEIOU]*)([aeiouAEIOU]*\\w*)$");
-		Matcher matcher = pattern.matcher(english_word);
+		Matcher matcher = pattern.matcher(englis
+		h_word);
 
 		matcher.find();
 		String piglatin_word;
@@ -116,6 +117,8 @@ public class PigLatin {
 
 	public static void main(String[] args) {
 		String result;
+
+		PigLatin.verifyAnser("Wrong amount of input argument...");
 
 		System.out.println("Now, make your choice:\n Translate (type 1)\n Practice (press 2)");
 		String choice=System.console().readLine();
