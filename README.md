@@ -1,4 +1,7 @@
 # software_course_ass2_mod1
+
+[![Build Status](https://travis-ci.org/JohanFKson/software_course_ass2_mod1.svg?branch=master)](https://travis-ci.org/JohanFKson/software_course_ass2_mod1)
+
 This is an assignment for the course Software Engineering and cloud computing. In this code we implement a very basic software using the 
 a test driven development with the tools git, Ant, Junit and Travis.
 
