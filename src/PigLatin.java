@@ -3,6 +3,17 @@ import java.util.regex.*;
 import java.util.Random;
 import java.io.*;
 public class PigLatin {
+	private static Boolean verifyWord(String word) {
+		Pattern pattern = Pattern.compile("^[a-zA-Z]*$");
+		Matcher matcher = pattern.matcher(word);
+		return matcher.matches();
+	}
+
+	private static Boolean verifySentence(String sentence) {
+		Pattern pattern = Pattern.compile("^[a-zA-Z,. ]*$");
+		Matcher matcher = pattern.matcher(sentence);
+		return matcher.matches();
+	}
 
 	public static String executeChoice(String choice){
 		String printVariable;
@@ -17,18 +28,6 @@ public class PigLatin {
 			printVariable="Not a valid choice!";
 		}
 		return printVariable;
-	}
-
-	private static Boolean verifyWord(String word) {
-		Pattern pattern = Pattern.compile("^[a-zA-Z]*$");
-		Matcher matcher = pattern.matcher(word);
-		return matcher.matches();
-	}
-
-	private static Boolean verifySentence(String sentence) {
-		Pattern pattern = Pattern.compile("^[a-zA-Z,. ]*$");
-		Matcher matcher = pattern.matcher(sentence);
-		return matcher.matches();
 	}
 
 	public static String translateWord(String english_word) {
@@ -97,6 +96,10 @@ public class PigLatin {
 	}
 
 	public static String verifyAnswer(String pigLatinGuess, String randomWord){
+
+		if(!verifyWord(randomWord))
+			throw new java.util.InputMismatchException("The words can only include a-z. Failure on: `"+randomWord+"`");
+
 		String practiceResult;
 		String pigLatinAnswer=translateWord(randomWord);
 

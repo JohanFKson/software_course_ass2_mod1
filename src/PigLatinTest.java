@@ -1,5 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import java.io.*;
 import java.util.InputMismatchException;
 
 public class PigLatinTest {
@@ -33,7 +34,7 @@ public class PigLatinTest {
 		}
 	}
 
-@Test
+	@Test
 	public void testChoice() {
 
 		String choice1 = "1";
@@ -52,7 +53,7 @@ public class PigLatinTest {
 		String testPrint3 = "Not a valid choice!";
 		String printVariable3 = PigLatin.executeChoice(choice3);
 		assertEquals(testPrint3, printVariable3);
-		}
+	}
 
 	@Test
 	public void testpracticeMode() {
@@ -80,6 +81,15 @@ public class PigLatinTest {
 		PigLatin.translateWord("a'");
 		PigLatin.translateWord("a-");
 		PigLatin.translateWord("a_");
+
+		// Test the practice mode
+		PigLatin.verifyAnswer("a,", "a");
+		PigLatin.verifyAnswer("a.", "a");
+		PigLatin.verifyAnswer("a/", "a");
+		PigLatin.verifyAnswer("a ", "a");
+		PigLatin.verifyAnswer("a'", "a");
+		PigLatin.verifyAnswer("a-", "a");
+		PigLatin.verifyAnswer("a_", "a");
 
 		// Test the translation of sentences
 		PigLatin.translateSentence("a/");
