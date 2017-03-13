@@ -61,16 +61,16 @@ public class PigLatinTest {
    public void testpracticeMode() {
 	PigLatin t = new PigLatin();
 
-	String pigLatinGuess="pig";
-	String pigLatinAnswer="igpay";
+	String randomWord="pig";
+	String pigLatinAnswer="pig";
 
-	String practiceResult=t.verifyAnswer(pigLatinGuess,pigLatinAnswer);
+	String practiceResult=t.verifyAnswer(pigLatinAnswer,randomWord);
 	assertEquals(practiceResult,"Wrong! You guessed: pig Correct answer: igpay");
 
-	pigLatinGuess="igpay";
+	randomWord="pig";
 	pigLatinAnswer="igpay";
 
-	practiceResult=t.verifyAnswer(pigLatinGuess,pigLatinAnswer);
+	practiceResult=t.verifyAnswer(pigLatinAnswer,randomWord);
 	assertEquals(practiceResult,"Correct!");
     }
 }

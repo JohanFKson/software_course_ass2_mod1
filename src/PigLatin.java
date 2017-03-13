@@ -77,14 +77,14 @@ public class PigLatin {
 		System.out.println(randomWord);
 		String pigLatinGuess=System.console().readLine();
 
-		String pigLatinAnswer=translateWord(randomWord);
-		String practiceResult=verifyAnswer(pigLatinGuess,pigLatinAnswer);
+		String practiceResult=verifyAnswer(pigLatinGuess,randomWord);
 
 		return practiceResult;
 	}
 
-	public static String verifyAnswer(String pigLatinGuess, String pigLatinAnswer){
+	public static String verifyAnswer(String pigLatinGuess, String randomWord){
 		String practiceResult;
+		String pigLatinAnswer=translateWord(randomWord);
 
 		if (pigLatinGuess.equals(pigLatinAnswer)) {
 			practiceResult=("Correct!");
