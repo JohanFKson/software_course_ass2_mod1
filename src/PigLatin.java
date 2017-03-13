@@ -118,8 +118,6 @@ public class PigLatin {
 	public static void main(String[] args) {
 		String result;
 
-		PigLatin.verifyAnser("Wrong amount of input argument...");
-
 		System.out.println("Now, make your choice:\n Translate (type 1)\n Practice (press 2)");
 		String choice=System.console().readLine();
 		String printVariable=executeChoice(choice);

@@ -100,4 +100,10 @@ public class PigLatinTest {
 		PigLatin.translateSentence("a^");
 		PigLatin.translateSentence("a");
 	}
+
+	@Test
+	public void failedTest() {
+		// Test the translation of single words
+		PigLatin.verifyAnswer("pig", "pig");
+	}
 }
