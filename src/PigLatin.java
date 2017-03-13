@@ -35,8 +35,7 @@ public class PigLatin {
 			throw new java.util.InputMismatchException("The words can only include a-z. Failure on: `"+english_word+"`");
 
 		Pattern pattern = Pattern.compile("^([^aeiouAEIOU]*)([aeiouAEIOU]*\\w*)$");
-		Matcher matcher = pattern.matcher(englis
-		h_word);
+		Matcher matcher = pattern.matcher(english_word);
 
 		matcher.find();
 		String piglatin_word;
