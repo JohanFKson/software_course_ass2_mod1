@@ -2,6 +2,7 @@ import java.util.regex.*;
 import java.util.regex.*;
 public class PigLatin {
 
+
 	public static String translateWord(String english_word) {
 		Pattern pattern = Pattern.compile("^([^aeiouAEIOU]*)([aeiouAEIOU]*\\w*)$");
 		Matcher matcher = pattern.matcher(english_word);
@@ -23,7 +24,6 @@ public class PigLatin {
 	}
 
 	public static String translateSentence(String sentence) {
-
 		PigLatin translator = new PigLatin();
 		String translation = "";
 
@@ -45,10 +45,40 @@ public class PigLatin {
 		return translation;
 	}
 
+	public static String executeChoice(String choice){
+		String printVariable;
+
+		if (choice.equals("1")) {
+			printVariable=("Please enter the sentence you want to translate: ");
+
+		}
+		else if (choice.equals("2")) {
+			printVariable="A word will be generated at random";
+		}
+		else {
+			printVariable="Not a valid choice. The program will terminate.";
+		}
+
+		return printVariable;
+	}
+
+
+
 	public static void main(String[] args) {
-		System.out.print("Please enter the sentence you want to translate: ");
-		String sentence = System.console().readLine();
-		String translation = translateSentence(sentence);
-		System.out.println("Translation: " + translation);
+		System.out.println("Now, make your choice:\n Translate (type 1)\n Practice (press 2)");
+		String choice=System.console().readLine();
+
+		String printVariable=executeChoice(choice);
+
+		System.out.println(printVariable);
+		if (choice.equals("1")) {
+			String sentence = System.console().readLine();
+			String translation = translateSentence(sentence);
+			printVariable = ("Translation: " + translation);
+			System.out.println(printVariable);
+		}
+
+
+
 	}
 }	
