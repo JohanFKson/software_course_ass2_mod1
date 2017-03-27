@@ -11,14 +11,7 @@ public class PigLatinTest {
 
 		//return String.join(" ", words);
 		String translation = PigLatin.translateSentence(sentence);
-		String truth = PigLatin.translateWord("Lorem") + " " +
-				PigLatin.translateWord("ipsum") + " " +
-				PigLatin.translateWord("dolor") + " " +
-				PigLatin.translateWord("sit") + " " +
-				PigLatin.translateWord("amet") + ", " +
-				PigLatin.translateWord("consectetuer") + " " +
-				PigLatin.translateWord("adipiscing") + " " +
-				PigLatin.translateWord("elit") + ".";
+		String truth = "Oremlay ipsumway olorday itsay ametway, onsectetuercay adipiscingway elitway.";
 		assertEquals(translation, truth);
 	}
 
