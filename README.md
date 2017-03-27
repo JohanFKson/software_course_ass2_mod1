@@ -8,7 +8,6 @@ a test driven development with the tools git, Ant, Junit and Travis.
 ## Requirements
 
 * JDK
-* Junit
 * Apache Ant
 
 ## Build
